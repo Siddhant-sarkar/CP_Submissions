@@ -1,4 +1,21 @@
 {
+  "CF149558922": {
+    "contest_id": 1637,
+    "language": "GNU C++17",
+    "path": "codeforces/1637/C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Andrew and Stones",
+    "problem_url": "https://codeforces.com/contest/1637/problem/C",
+    "submission_id": "CF149558922",
+    "submission_url": "https://codeforces.com/contest/1637/submission/149558922",
+    "tags": [
+      "greedy",
+      "implementation",
+      "*1200"
+    ],
+    "timestamp": "Mar/14/2022 01:09"
+  },
   "CF149585407": {
     "contest_id": 1637,
     "language": "GNU C++17",
