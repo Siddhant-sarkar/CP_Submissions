@@ -1,4 +1,21 @@
 {
+  "CF150210629": {
+    "contest_id": 1631,
+    "language": "PyPy 3",
+    "path": "codeforces/1631/B.py",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Fun with Even Subarrays",
+    "problem_url": "https://codeforces.com/contest/1631/problem/B",
+    "submission_id": "CF150210629",
+    "submission_url": "https://codeforces.com/contest/1631/submission/150210629",
+    "tags": [
+      "dp",
+      "greedy",
+      "*1100"
+    ],
+    "timestamp": "Mar/20/2022 14:12"
+  },
   "CF150265473": {
     "contest_id": 1626,
     "language": "PyPy 3",
