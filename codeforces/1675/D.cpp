@@ -47,49 +47,41 @@ void __f (const char* names, Arg1&& arg1, Args&&... args) {
 	cout.write (names, comma - names) << " : " << arg1 << " | "; __f (comma + 1, args...);
 }
 
-const int N = 200005;
-vector<vi> ans;
+const int N = 100005;
 
-void dfs(int u, int v, vi g[], vi &t ) {
-	t.pb(u);
-	if (sz(g[u]) == 1) {
-		ans.pb(t);
-		t.clear();
-	}
-	for (auto it : g[u]) {
-		if (it == v)
-			continue;
-		dfs(it, u, g, t);
-	}
-}
 void solve() {
-	ans.clear();
 	read(n);
 	if (n == 1) {
 		read(k);
 		cout << 1 << endl << 1 << endl << k << endl;
 		return;
 	}
-
-	int s ;
-	vi g[n + 1];
-
-	fo(i, n) {
-		read(k);
-		if (k == i + 1)
-			s = i + 1;
-		g[k].pb(i + 1);
-		g[i + 1].pb(k);
+	vi g(n + 1) , l(n + 1, 1) , v(n + 1, 0);
+	l[0] = 0;
+	Fo(i, 1, n + 1) {
+		cin >> g[i];
+		l[g[i]] = 0;
 	}
-	vi a;
-	dfs(s, s, g, a);
-	cout << sz(ans) << endl;
-	for (auto it : ans) {
-		cout << sz(it) << endl;
-		for (auto iit : it) {
-			cout << iit << " ";
+	vector<vector<int>> ans (n + 1);
+	int col = 0;
+	Fo(i, 1, n + 1 ) {
+		if (!l[i]) continue;
+		int trl = i;
+		vi pth;
+		while (!v[trl]  ) {
+			pth.pb(trl);
+			v[trl] = 1;
+			trl = g[trl];
 		}
-		cout <<  endl;
+		ans[col] = pth;
+		col++;
+	}
+	cout << col << endl;
+	for (auto &it : ans) {
+		if (!sz(it)) continue;
+		cout << sz(it) << endl;
+		reverse(all(it));
+		print(it);
 	}
 }
 
